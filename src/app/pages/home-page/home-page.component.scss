@@ -7,25 +7,17 @@
   position: relative;
 }
 
-.img-style {
-  width: 380px;
-  height: 380px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
 .page-header {
   margin-top: 10rem;
 }
 
-.page-header,
-h1,
-h5 {
+.page-header h1,
+.page-header h5 {
   color: #333333;
   font-weight: 800 !important
 }
 
-.page-header,
-h1 {
+.page-header h1 {
   font-size: 2.6rem
 }
 
@@ -38,6 +30,10 @@ h1 {
   padding-top: 100px;
 }
 
+#about h3 {
+  color: #333333;
+  font-weight: 800 !important
+}
 
 .header-center {
   height: 1px;
@@ -109,4 +105,59 @@ h1 {
   min-height: 100vh;
   position: relative;
   padding-top: 100px;
+}
+
+
+@media (min-width: 300px) {
+  #header .img-header {
+    width: 330px;
+    height: 330px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  #header .img-header {
+    width: 350px;
+    height: 350px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  #header .img-header {
+    width: 400px;
+    height: 400px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  #header .img-header {
+    width: 450px;
+    height: 450px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+  #header .img-header {
+    width: 500px;
+    height: 500px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
+  #about .img-about {
+    width: 400px !important;
+    height: 400px !important;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
 }

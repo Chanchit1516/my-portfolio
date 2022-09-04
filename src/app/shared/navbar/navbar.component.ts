@@ -74,8 +74,10 @@ export class NavbarComponent implements OnInit {
 
   onCollapseMobile() {
     const nav = document.querySelector(".navbar-collapse");
-    this.isCollapse = true
     nav?.classList.add("navbar-collapse-mobile");
+    setTimeout(() => {
+      this.isCollapse = true
+    }, 300)
   }
 
   hideCollapseToggler() {
