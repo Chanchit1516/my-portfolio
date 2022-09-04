@@ -52,7 +52,7 @@ export class NavbarComponent implements OnInit {
     this.startPosition = event.srcElement.scrollTop;
     let scroll = event.currentTarget.pageYOffset;
     const nav = document.querySelector(".navbar");
-    if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
+    if (document.body.scrollTop > 120 || document.documentElement.scrollTop > 120) {
       nav?.classList.add("navbar-scrolled");
     } else {
       nav?.classList.remove("navbar-scrolled");
