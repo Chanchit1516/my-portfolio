@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+body {
+  --navbar-height: 80px;
+  position: relative;
+}
+
+.navbar {
+  height: var(--navbar-height);
+  transition: transform 0.3s;
+}
+
+.navbar--hidden {
+  transform: translateY(calc(-1 * var(--navbar-height)));
+  box-shadow: none;
+}

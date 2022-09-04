@@ -1,0 +1,58 @@
+@font-face {
+  font-family: FrankRuhlLibre-Bold;
+  src: url(../../../assets/fonts/FrankRuhlLibre-Bold.ttf);
+}
+
+a.navbar-brand {
+  font-family: "FrankRuhlLibre-Bold";
+  font-size: 30px;
+  color: #333333;
+}
+
+a.navbar-brand:hover {
+  font-family: "FrankRuhlLibre-Bold";
+  font-size: 30px;
+  color: #333333;
+}
+
+a {
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+}
+
+#navbarToggler a:hover {
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 2px solid currentColor;
+}
+
+#navbarToggler a.active {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333333;
+  border-bottom: 2px solid currentColor;
+
+}
+
+.nav-bg {
+  transition: all 0.5s;
+  background-color: transparent;
+  padding: 35px 0 !important;
+  // box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+  // background-color: #111111 !important;
+}
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler.navbar-toggler {
+  border-color: rgb(219, 219, 219);
+}
+
+.navbar-scrolled{
+  background-color: #ffffff !important;
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+  padding: 40px 0 !important;
+}

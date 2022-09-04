@@ -1,0 +1,70 @@
+//page-header
+.bg-home {
+  // background-color: #F8F8F8;
+  background-color: #f1f1f1;
+  background-size: cover;
+  min-height: 100vh;
+  position: relative;
+}
+
+.img-style {
+  width: 380px;
+  height: 380px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.page-header {
+  margin-top: 10rem;
+}
+
+.page-header,
+h1,
+h5 {
+  color: #333333;
+  font-weight: 800 !important
+}
+
+.page-header,
+h1 {
+  font-size: 2.6rem
+}
+
+//about
+#about {
+  background-color: white;
+  background-size: cover;
+  min-height: 100vh;
+  position: relative;
+  padding-top: 100px;
+}
+
+// .section-about {
+//   margin-top: 3rem;
+
+// }
+
+.header-center {
+  height: 1px;
+  background: #d6d6d6;
+  border-bottom: #d6d6d6 solid 1px;
+  margin-bottom: 3.2rem;
+  position: relative;
+}
+
+.header-center h3 {
+  background: white;
+  position: absolute;
+  top: -0.8rem;
+  left: 50%;
+  margin-left: -100px;
+  width: 200px;
+  text-align: center;
+  display: block;
+  color: #757575;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-size: 1.4rem;
+  font-weight: normal;
+  letter-spacing: 0.2rem;
+  padding: 0 !important;
+}
