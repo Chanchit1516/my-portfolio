@@ -1,7 +1,7 @@
-<nav id="navbar" class="navbar navbar-expand-lg navbar-light nav-bg fixed-top">
+<header id="navbar" class="navbar navbar-expand-lg navbar-light nav-bg fixed-top">
   <div class="container-xxl">
     <a class="navbar-brand" href="#">Portfolio</a>
-    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" (click)="onCollapseMobile()"
       data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false"
       aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -9,27 +9,30 @@
     <div class="collapse navbar-collapse" id="navbarToggler">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item ps-3">
-          <a class="nav-link active" aria-current="page" href="#header">Home</a>
+          <a class="nav-link active" aria-current="page" href="#header" (click)="hideCollapseToggler()">Home</a>
         </li>
         <li class="nav-item ps-3">
-          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#about" (click)="hideCollapseToggler()">About</a>
         </li>
         <li class="nav-item ps-3">
-          <a class="nav-link" href="#skills">Skills</a>
+          <a class="nav-link" href="#skills" (click)="hideCollapseToggler()">Skills</a>
         </li>
         <li class="nav-item ps-3">
-          <a class="nav-link" href="#education">Education</a>
+          <a class="nav-link" href="#education" (click)="hideCollapseToggler()">Education</a>
         </li>
         <li class="nav-item ps-3">
-          <a class="nav-link" href="#work">Work</a>
+          <a class="nav-link" href="#work" (click)="hideCollapseToggler()">Work</a>
         </li>
         <li class="nav-item ps-3">
-          <a class="nav-link" href="#experience">Experience</a>
+          <a class="nav-link" href="#experience" (click)="hideCollapseToggler()">Experience</a>
         </li>
         <li class="nav-item ps-3">
-          <a class="nav-link" href="#contact">Contact</a>
+          <a class="nav-link" href="#contact" (click)="hideCollapseToggler()">Contact</a>
         </li>
       </ul>
+      <i class="fa-solid fa-x fa-2xl mobile-nav-toggle" style="color: white;" *ngIf="isCollapse" (click)="hideCollapseToggler()"></i>
+      <!-- <span class="bi mobile-nav-toggle bi-x navbar-toggler-icon" style="background-color: red;"></span> -->
+      <!-- <i class="bi mobile-nav-toggle bi-x"></i> -->
     </div>
   </div>
-</nav>
+</header>

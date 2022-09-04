@@ -35,6 +35,7 @@ export class NavbarComponent implements OnInit {
 
   currentPosition: any;
   startPosition: number = 0;
+  isCollapse: boolean = false;
   private scrollChangeCallback!: () => void;
 
 
@@ -51,21 +52,37 @@ export class NavbarComponent implements OnInit {
     this.startPosition = event.srcElement.scrollTop;
     let scroll = event.currentTarget.pageYOffset;
     const nav = document.querySelector(".navbar");
-    if(document.body.scrollTop > 100 || document.documentElement.scrollTop > 100){
+    if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
       nav?.classList.add("navbar-scrolled");
-    }else{
+    } else {
       nav?.classList.remove("navbar-scrolled");
     }
 
     // if (scroll > this.currentPosition) {
+    //   console.log('scrollDown');
     //   // nav?.classList.add("navbar--hidden");
-    //   nav?.classList.add("navbar--show");
+    //   // nav?.classList.add("navbar--show");
     // } else {
+    //   console.log('scrollUp');
     //   // nav?.classList.remove("navbar--hidden");
-    //   nav?.classList.remove("navbar--show");
+    //   // nav?.classList.remove("navbar--show");
     // }
     this.currentPosition = scroll;
 
+  }
+
+
+  onCollapseMobile() {
+    const nav = document.querySelector(".navbar-collapse");
+    this.isCollapse = !this.isCollapse;
+    nav?.classList.add("navbar-collapse-mobile");
+  }
+
+  hideCollapseToggler() {
+    this.isCollapse = !this.isCollapse;
+    const nav = document.querySelector(".navbar-collapse");
+    nav?.classList.remove("navbar-collapse-mobile");
+    nav?.classList.remove("show");
   }
 
 }
