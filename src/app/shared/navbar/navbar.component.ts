@@ -74,12 +74,12 @@ export class NavbarComponent implements OnInit {
 
   onCollapseMobile() {
     const nav = document.querySelector(".navbar-collapse");
-    this.isCollapse = !this.isCollapse;
+    this.isCollapse = true
     nav?.classList.add("navbar-collapse-mobile");
   }
 
   hideCollapseToggler() {
-    this.isCollapse = !this.isCollapse;
+    this.isCollapse = false
     const nav = document.querySelector(".navbar-collapse");
     nav?.classList.remove("navbar-collapse-mobile");
     nav?.classList.remove("show");
