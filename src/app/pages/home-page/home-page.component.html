@@ -52,8 +52,8 @@
           </div>
           <div class="row">
             <div class="col-md-12">
-              <button type="button" class="btn btn-outline-secondary mt-3">
-                <a class="nav-link" href="#skills">My Skills</a>
+              <button type="button" class="btn btn-outline-warning mt-3" (click)="downloadMyResume()">
+                <a class="nav-link">My Resume</a>
               </button>
             </div>
           </div>
@@ -73,7 +73,7 @@
       <div class="row pt-3 section-skills">
         <div class="col-md-12">
           <div class="header-center">
-            <h3>My Skills</h3>
+            <h3>Skills</h3>
           </div>
         </div>
       </div>
@@ -158,7 +158,7 @@
       <div class="row pt-3 section-education">
         <div class="col-md-12">
           <div class="header-center">
-            <h3>My Education</h3>
+            <h3>Education</h3>
           </div>
         </div>
       </div>
@@ -223,7 +223,7 @@
                 <div class="timeline__event__description">
                   <p>Develop sites and web-based solutions, both front end and back end [.NET Core 3.1, angular],
                     Responsible for other tasks as assigned,
-                    Attended meetings or discussion sessions of software team to Performed analysis, design structure 
+                    Attended meetings or discussion sessions of software team to Performed analysis, design structure
                     project and development of the application according to the user requirements</p>
                 </div>
               </div>
@@ -260,14 +260,15 @@
                   Celestica
                 </div>
                 <div class="timeline__event__description">
-                  <p>Used C#,.Net Core 3.1, JavaScript and Bootstrap 4 to design and develop sites and web-based solutions, 
+                  <p>Used C#,.Net Core 3.1, JavaScript and Bootstrap 4 to design and develop sites and web-based
+                    solutions,
                     both front end and back end,
                     Design ASP.NET application for linkage to Azure SQL database,
-                    Attended meetings or discussion sessions of software team to Performed analysis, design structure 
-                    project and 
+                    Attended meetings or discussion sessions of software team to Performed analysis, design structure
+                    project and
                     development of the application according to the user requirements,
-                    Attends monthly status meetings with the development, functional and project management teams to 
-                    discuss status, 
+                    Attends monthly status meetings with the development, functional and project management teams to
+                    discuss status,
                     project timelines and testing strategies</p>
                 </div>
 
@@ -286,14 +287,14 @@
                   2Fellows
                 </div>
                 <div class="timeline__event__description">
-                  <p>Used C#,.Net Framework 4.7, JavaScript and Bootstrap 4 to design and develop sites and web-based 
-                    solutions, 
+                  <p>Used C#,.Net Framework 4.7, JavaScript and Bootstrap 4 to design and develop sites and web-based
+                    solutions,
                     both front end and back end,
-                   Trouble-shot and fixed any threads and bugs,
-                   Communicated with clients to provide knowledge, expertise, and support, ensuring that their 
+                    Trouble-shot and fixed any threads and bugs,
+                    Communicated with clients to provide knowledge, expertise, and support, ensuring that their
                     requirements were fully met,
-                   Design ASP.NET application for linkage to SQL databases,
-                   Attended client meetings or discussion sessions of software team to understand the requested new 
+                    Design ASP.NET application for linkage to SQL databases,
+                    Attended client meetings or discussion sessions of software team to understand the requested new
                     functionalities</p>
                 </div>
               </div>
@@ -305,12 +306,75 @@
     </div>
   </section>
   <section id="contact">
-    <div class="container">
+    <div class="container" style="color:white">
       <div class="row pt-3 section-contact">
-        <div class="col-md-12">
-          <div class="header-center">
-            <h3>Contact</h3>
+        <div class="col-md-12 text-center">
+          <h3>GET IN TOUCH</h3>
+        </div>
+      </div>
+      <hr class=" border-top border-secondary">
+
+      <div class="row ">
+        <div class="col-md-4 mb-3">
+          <h3>Chanchit Portfolio</h3>
+          <label>Thank you for visiting my personal portfolio website. Connect with me over socials.</label>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h3>Quick Links</h3>
+          <div class="row">
+            <div class="col-md-6 quick-link-hover">
+              <a class="quick-link-hover pointer" href="#header">
+                <i class="fa-solid fa-circle-arrow-up  "></i><label class="ps-3 pointer">Home</label><br>
+              </a>
+            </div>
+            <div class="col-md-6 quick-link-hover">
+              <a class="quick-link-hover pointer" href="#education">
+                <i class="fa-solid fa-circle-arrow-up pointer"></i><label class="ps-3 pointer">Education</label>
+              </a>
+            </div>
           </div>
+          <div class="row">
+            <div class="col-md-6 ">
+              <a class="quick-link-hover pointer" href="#about">
+                <i class="fa-solid fa-circle-arrow-up pointer"></i><label class="ps-3 pointer">About</label><br>
+              </a>
+
+            </div>
+            <div class="col-md-6 quick-link-hover">
+
+              <a class="quick-link-hover pointer" href="#experience">
+                <i class="fa-solid fa-circle-arrow-up pointer"></i><label class="ps-3 pointer">Experience</label>
+              </a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 quick-link-hover">
+              <a class="quick-link-hover pointer" href="#skills">
+                <i class="fa-solid fa-circle-arrow-up pointer"></i><label class="ps-3 pointer">Skills</label>
+              </a>
+
+            </div>
+            <div class="col-md-6">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h3>Find me on:</h3>
+          <i class="fa-solid fa-phone text-warning"></i><label class="ps-3">063-313-7551</label><br>
+          <i class="fa-solid fa-envelope text-warning"></i><label class="ps-3">chanchit.ler01@gmail.com</label><br>
+
+          <div class="mt-4">
+            <button type="button" class="btn btn-light btn-circle me-3 pointer" (click)="linkToSocial('linkedin')"><i
+                class="fa-brands fa-linkedin text-primary fa-xl"></i></button>
+            <button type="button" class="btn btn-light btn-circle me-3 pointer" (click)="linkToSocial('github')"><i
+                class="fa-brands fa-github fa-xl"></i></button>
+            <button type="button" class="btn btn-light btn-circle me-3 pointer" (click)="linkToSocial('facebook')"><i
+                class="fa-brands fa-facebook text-primary fa-xl"></i></button>
+            <button type="button" class="btn btn-light btn-circle me-3 pointer" (click)="linkToSocial('line')"><i
+                class="fa-brands fa-line text-success fa-xl"></i></button>
+          </div>
+
+
         </div>
       </div>
     </div>

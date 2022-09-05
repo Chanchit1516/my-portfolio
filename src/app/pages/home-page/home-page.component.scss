@@ -115,6 +115,11 @@
   padding-top: 100px;
 }
 
+#experience h3 {
+  color: #333333;
+  font-weight: 800 !important
+}
+
 $content-width: calc(50vw - 84px);
 $margin: 20px;
 $spacing: 20px;
@@ -528,11 +533,18 @@ h2 {
 
 //contact
 #contact {
-  background-color: white;
-  background-size: cover;
-  min-height: 100vh;
-  position: relative;
-  padding-top: 100px;
+  background-color: #27282D;
+  min-height: 30vh;
+}
+
+#contact .btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
 }
 
 
@@ -611,4 +623,16 @@ h2 {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+.quick-link-hover{
+  color: #ffffff !important;
+}
+
+.quick-link-hover:hover{
+  color: #FFC007 !important;
 }
