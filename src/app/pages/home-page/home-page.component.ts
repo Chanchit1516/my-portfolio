@@ -3,6 +3,8 @@ import {
   OnInit
 } from '@angular/core';
 
+import Typewriter from '../../type-writer/type-writer'
+
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
@@ -13,9 +15,39 @@ export class HomePageComponent implements OnInit {
   private lineUrl = "https://line.me/ti/p/G8a8V6Jx01";
   private linkedInUrl = "https://www.linkedin.com/in/chanchit-lerdwongsuwan-a9a4511ab/";
   private githubUrl = "https://github.com/Chanchit1516";
-  constructor() {}
+
+  constructor() {
+
+  }
 
   ngOnInit(): void {}
+
+  ngAfterViewInit(): void {
+    document.querySelector(".whitespace") as HTMLDivElement;
+    var typewriter = new Typewriter(
+      document.querySelector(".whitespace") as HTMLDivElement, {
+        element: document.createElement("h5"),
+        loop: true,
+        typingSpeed: 60,
+        deletingSpeed: 80,
+      }
+    )
+
+    typewriter
+      .typeString("Software Engineer|")
+      .pauseFor(1200)
+      .deleteAll(10)
+      .typeString("Backend Developer|")
+      .pauseFor(1200)
+      .deleteAll(10)
+      .pauseFor(1200)
+      .typeString("Frontend Developer|")
+      .deleteAll(10)
+      .typeString("Fullstack Developer|")
+      .pauseFor(1200)
+      .deleteAll(10)
+      .start()
+  }
 
   linkToSocial(social: string) {
     switch (social) {
@@ -42,7 +74,7 @@ export class HomePageComponent implements OnInit {
 
   }
 
-  downloadMyResume(){
+  downloadMyResume() {
     // window.open("")
     const link = document.createElement('a');
     link.setAttribute('target', '_blank');
@@ -52,5 +84,7 @@ export class HomePageComponent implements OnInit {
     link.click();
     link.remove();
   }
+
+
 
 }
