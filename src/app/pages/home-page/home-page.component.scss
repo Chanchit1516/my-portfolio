@@ -584,15 +584,21 @@ h2 {
 
 @media (min-width: 300px) {
   #header .img-header {
-    width: 330px;
-    height: 330px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 400px;
+    height: 400px;
+    // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 
   #education .img-education {
     width: 550px !important;
     height: 300px;
     border-radius: 5px 5px 0 0
+  }
+
+  #about .img-about {
+    width: 350px !important;
+    height: 350px !important;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 }
 
@@ -604,41 +610,64 @@ h2 {
     height: 350px;
     border-radius: 5px 5px 0 0
   }
+
+  #about .img-about {
+    width: 380px !important;
+    height: 380px !important;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   #header .img-header {
-    width: 350px;
-    height: 350px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 450px;
+    height: 450px;
+    // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 
   #education .img-education {
     height: 200px;
     border-radius: 5px 0 0 5px
   }
+
+  #about .img-about {
+    width: 350px !important;
+    height: 350px !important;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   #header .img-header {
-    width: 400px;
-    height: 400px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 450px;
+    height: 450px;
+    // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 
   #education .img-education {
     height: 300px;
     border-radius: 5px 0 0 5px
   }
+
+  #about .img-about {
+    width: 400px !important;
+    height: 400px !important;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
 }
 
 // X-Large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   #header .img-header {
-    width: 450px;
-    height: 450px;
+    width: 500px;
+    height: 500px;
+    // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  #about .img-about {
+    width: 400px !important;
+    height: 400px !important;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 }
@@ -646,9 +675,9 @@ h2 {
 // XX-Large devices (larger desktops, 1400px and up)
 @media (min-width: 1400px) {
   #header .img-header {
-    width: 500px;
-    height: 500px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 600px;
+    height: 600px;
+    // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 
   #about .img-about {
