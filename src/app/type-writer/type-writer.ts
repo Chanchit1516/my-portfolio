@@ -12,7 +12,7 @@ export default class Typewriter {
     { loop = false, typingSpeed = 50, deletingSpeed = 50, element = new HTMLElement } = {}
   ) {
     this.#element = element
-    this.#element.style.cssText = "color:rgb(218, 190, 35); display: inline; font-weight:800" 
+    this.#element.style.cssText = "color:#FCAE15; display: inline; font-weight:800" 
     parent.append(this.#element)
     this.#loop = loop
     this.#typingSpeed = typingSpeed
