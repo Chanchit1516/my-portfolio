@@ -1,0 +1,122 @@
+// Chatbot
+
+.dialog-chat {
+  position: fixed;
+  bottom: 0;
+  right: 80px;
+  z-index: 999;
+}
+
+.dialog-icon {
+  z-index: 999;
+}
+
+.dialog-icon {
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 999;
+}
+
+a.nav-link {
+  color: gray;
+  font-size: 18px;
+  padding: 0;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #e84118;
+  padding: 2px;
+}
+
+input:focus {
+  outline: 0px !important;
+  box-shadow: none !important;
+}
+
+.card-text-left {
+  border: 2px solid rgba(245, 245, 245, 0.856);
+  border-radius: 20px 20px 20px 0;
+  background-color: rgba(245, 245, 245, 0.856);
+  color: black;
+}
+
+.card-text-right {
+  border: 2px solid rgb(236, 65, 65);
+  border-radius: 20px 20px 0 20px;
+  background-color: rgb(236, 65, 65);
+  color: white;
+}
+
+.card-text-right-btn1 {
+  border: 2px solid rgb(236, 65, 65);
+  border-radius: 20px 20px 0 20px;
+  background-color: white;
+  color: rgb(236, 65, 65);
+}
+
+.card-text-right-btn2 {
+  border: 2px solid rgb(236, 65, 65);
+  border-radius: 20px 20px 0 20px;
+  background-color: white;
+  color: rgb(236, 65, 65);
+}
+
+.icon-chat-hover:hover {
+  width: 60px !important;
+  height: 60px !important;
+}
+
+.icon-x {
+  cursor: pointer;
+}
+
+#send-msg:disabled {
+  background-color: #fafafa !important;
+}
+
+
+
+
+.loader {
+  margin-top: 8px !important;
+  height: 15px;
+  margin: auto;
+  display: flex;
+}
+
+.circle {
+  width: 8px;
+  height: 8px;
+  background: rgb(122, 122, 122);
+  border-radius: 50%;
+  margin: 0 2px;
+  animation: jump 1s linear infinite
+}
+
+@keyframes jump {
+  0% {
+    margin-top: 0;
+  }
+
+  35% {
+    margin-top: -6px;
+  }
+
+  70% {
+    margin-top: 0px;
+  }
+}
+
+
+#b {
+  animation-delay: 0.2s;
+}
+
+#c {
+  animation-delay: 0.4s;
+}

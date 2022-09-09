@@ -1,0 +1,132 @@
+<div>
+  <div class="dialog-icon" *ngIf="!isShowChat" (click)="switchChat()">
+    <!-- <h4>Chat bot</h4> -->
+    <div class="position-relative icon-chat-hover"
+      style="width: 50px;height: 50px;border-radius:50%;border: 2px solid #e84118; padding: 2px;">
+      <img src="../../../assets/images/chatbot-icon.jpg" class="img-fluid rounded-circle" alt="">
+      <span
+        class="position-absolute bottom-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle">
+        <span class="visually-hidden">New alerts</span>
+      </span>
+    </div>
+  </div>
+  <!-- <input type="text" class="form-control" #search> -->
+  <div class="row mt-4 dialog-chat" *ngIf="isShowChat">
+    <div class="col">
+      <div class="card mx-auto" style="max-width: 400px;">
+
+        <div class="card-header bg-transparent">
+          <div class="navbar navbar-expand p-0">
+            <ul class="navbar-nav me-auto align-items-center">
+              <!-- <li class="nav-item pe-3">
+                <fa-icon [icon]="faAngleLeft"></fa-icon>
+              </li> -->
+              <li class="nav-item">
+                <a href="javascript:void(0)" class="nav-link">
+                  <div class="position-relative"
+                    style="width: 50px;height: 50px;border-radius:50%;border: 2px solid #e84118; padding: 2px;">
+                    <img src="../../../assets/images/chatbot-icon.jpg" class="img-fluid rounded-circle" alt="">
+                    <span
+                      class="position-absolute bottom-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle">
+                      <span class="visually-hidden">New alerts</span>
+                    </span>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="javascript:void(0)" class="nav-link">Chat Bot</a>
+                    </div>
+                </div>
+                <!-- <div class="row">
+                    <div class="col-md-12">
+                        <a href="javascript:void(0)" class="nav-link" style="font-size: 13px; line-height: 90%;">Online</a>
+                    </div>
+                </div> -->
+              </li>
+            </ul>
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item" (click)="switchChat()">
+                <div class="bg-transparent border-0">
+                  <button class="btn btn-light text-secondary" style="border-radius: 50%;">
+                    <fa-icon [icon]="faX"></fa-icon>
+                  </button>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card-body p-1"
+          style="height: 400px; width: 350px;overflow-y: auto;overflow-x: hidden; padding-bottom: unset !important;"
+          #scrollMe>
+          <div *ngFor="let msg of messages;let i = index">
+
+            <div class="d-flex align-items-baseline" [class.mt-4]="i !== 0 && messages[i - 1].type !== 'received'"
+              *ngIf="msg.type === 'received'">
+              <div class="pe-4" style="word-break:break-all">
+
+                <div class="card card-text-left d-inline-block p-2 px-3 m-1">
+                  <div>
+                    {{msg.message}}
+                  </div>
+
+                </div>
+                <div class="small px-2" *ngIf="msg.time_stamp">
+                  <label>
+                    {{msg.time_stamp | date:'shortTime'}}
+                  </label>
+                </div>
+              </div>
+
+            </div>
+            <div class="d-flex align-items-baseline text-end justify-content-end"
+              [class.mt-4]="i !== 0 && messages[i - 1].type !== 'sent'" *ngIf="msg.type === 'sent'">
+              <div class="ps-4" style="word-break:break-all">
+                <div class="card d-inline-block p-2 px-3 m-1" [class.card-text-right]="!msg.button_id"
+                  [class.card-text-right-btn1]="msg.button_id === 1" [class.card-text-right-btn2]="msg.button_id === 2">
+                  <div>
+                    {{msg.message}}
+                  </div>
+                </div>
+                <div class="small" *ngIf="msg.time_stamp && !msg.is_connection_lose">
+                  <label>
+                    {{msg.time_stamp | date:'shortTime'}}
+                  </label>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- <div *ngIf="messages"
+            class="card card-text-left d-inline-block p-2 px-3 m-1 mb-3">
+            <div class="loader">
+              <div class="circle" id="a"></div>
+              <div class="circle" id="b"></div>
+              <div class="circle" id="c"></div>
+            </div>
+          </div> -->
+
+
+        </div>
+
+        <div class="card-footer bg-white w-100 bottom-0 m-0 p-1">
+          <div class="input-group">
+
+            <input type="text" id="send-msg" [(ngModel)]="textInput" class="form-control border-0"
+              placeholder="Write a message..." (keydown)="onKeydownMessages($event)">
+
+            <div class="input-group-text bg-transparent border-0">
+              <button class="btn btn-light text-secondary" (click)="sendMessage(textInput)">
+                <fa-icon [icon]="faPaperPlane"></fa-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
