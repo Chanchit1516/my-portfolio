@@ -12,6 +12,7 @@ import Typewriter from '../../type-writer/type-writer'
 })
 export class HomePageComponent implements OnInit {
   private fbUrl = "https://web.facebook.com/profile.php?id=100007469436147";
+  private igUrl = "https://www.instagram.com/chanchit_ler/";
   private lineUrl = "https://line.me/ti/p/G8a8V6Jx01";
   private linkedInUrl = "https://www.linkedin.com/in/chanchit-lerdwongsuwan-a9a4511ab/";
   private githubUrl = "https://github.com/Chanchit1516";
@@ -61,6 +62,10 @@ export class HomePageComponent implements OnInit {
       }
       case "facebook": {
         window.open(this.fbUrl);
+        break;
+      }
+      case "instagram": {
+        window.open(this.igUrl);
         break;
       }
       case "line": {
