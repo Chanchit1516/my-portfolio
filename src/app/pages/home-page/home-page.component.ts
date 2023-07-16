@@ -44,7 +44,7 @@ export class HomePageComponent implements OnInit {
       .typeString("Frontend Developer")
       .pauseFor(1200)
       .deleteAll(10)
-      .typeString("Fullstack Developer")
+      .typeString("Full Stack Developer")
       .pauseFor(1200)
       .deleteAll(10)
       .start()
