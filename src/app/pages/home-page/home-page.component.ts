@@ -12,6 +12,7 @@ import Typewriter from '../../type-writer/type-writer'
 })
 export class HomePageComponent implements OnInit {
   private fbUrl = "https://web.facebook.com/profile.php?id=100007469436147";
+  private igUrl = "https://www.instagram.com/chanchit_ler/";
   private lineUrl = "https://line.me/ti/p/G8a8V6Jx01";
   private linkedInUrl = "https://www.linkedin.com/in/chanchit-lerdwongsuwan-a9a4511ab/";
   private githubUrl = "https://github.com/Chanchit1516";
@@ -20,17 +21,17 @@ export class HomePageComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   ngAfterViewInit(): void {
     document.querySelector(".whitespace") as HTMLDivElement;
     var typewriter = new Typewriter(
       document.querySelector(".whitespace") as HTMLDivElement, {
-        element: document.createElement("h5"),
-        loop: true,
-        typingSpeed: 60,
-        deletingSpeed: 80,
-      }
+      element: document.createElement("h5"),
+      loop: true,
+      typingSpeed: 60,
+      deletingSpeed: 80,
+    }
     )
 
     typewriter
@@ -43,10 +44,58 @@ export class HomePageComponent implements OnInit {
       .typeString("Frontend Developer")
       .pauseFor(1200)
       .deleteAll(10)
-      .typeString("Fullstack Developer")
+      .typeString("Full Stack Developer")
       .pauseFor(1200)
       .deleteAll(10)
       .start()
+
+    const navLinks = document.querySelectorAll('#navbar ul li a.nav-link');
+    document.addEventListener('scroll', () => {
+      const currentSection = this.getCurrentSection();
+      navLinks.forEach((link) => {
+        const sectionId = link?.getAttribute('href')?.slice(1);
+        if (sectionId === currentSection) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    });
+  }
+
+  getCurrentSection(): string {
+    // Helper function to get the current section based on the scrolling position
+    const sections = document.querySelectorAll('section');
+    let currentSection: any = '';
+    const scrollPosition = window.pageYOffset;
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (scrollPosition >= sectionTop - sectionHeight / 2) {
+        currentSection = section.getAttribute('id');
+      }
+    });
+    if (this.isScrollAtBottom()) {
+      //id of last element
+      return "contact";
+    } else {
+      return currentSection;
+    }
+
+  }
+
+  isScrollAtBottom(): boolean {
+    // Helper function to check if the scroll position is at the bottom of the page
+    const scrollPosition = window.pageYOffset;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+
+    // Calculate the scrollable distance based on the zoom level
+    const scrollableDistance = documentHeight - windowHeight;
+
+    // Check if the scroll position is within a tolerance range of the scrollable distance
+    return scrollPosition >= scrollableDistance - 1;
   }
 
   linkToSocial(social: string) {
@@ -61,6 +110,10 @@ export class HomePageComponent implements OnInit {
       }
       case "facebook": {
         window.open(this.fbUrl);
+        break;
+      }
+      case "instagram": {
+        window.open(this.igUrl);
         break;
       }
       case "line": {
@@ -84,6 +137,7 @@ export class HomePageComponent implements OnInit {
     link.click();
     link.remove();
   }
+
 
 
 

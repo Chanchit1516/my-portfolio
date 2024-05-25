@@ -6,12 +6,16 @@ body {
   position: relative;
 }
 
-.navbar {
+#navbar .navbar {
   height: var(--navbar-height);
   transition: transform 0.3s;
 }
 
-.navbar--hidden {
+#navbar .navbar--hidden {
   transform: translateY(calc(-1 * var(--navbar-height)));
   box-shadow: none;
+}
+
+img {
+  pointer-events: none;
 }

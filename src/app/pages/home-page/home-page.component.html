@@ -1,5 +1,5 @@
-<div data-bs-spy="scroll" data-bs-target="#navbarToggler" data-bs-offset="0" class="scrollspy-example" tabindex="0">
-  <header id="header" class="bg-home color-overlay d-flex">
+<div>
+  <section id="header" class="bg-home color-overlay d-flex">
     <div class="container page-header">
       <div class="row align-items-center justify-content-center">
         <div class="col-md-6">
@@ -21,7 +21,7 @@
         </div>
       </div>
     </div>
-  </header>
+  </section>
   <section id="about">
     <div class="container">
       <div class="row pt-3 section-about">
@@ -33,7 +33,7 @@
       </div>
       <div class="row pt-5">
         <div class="col-md-6">
-          <img class="rounded-circle img-about mx-auto d-block img-fluid" src="../../../assets/images/My-Picture.jpg">
+          <img class="rounded-circle img-about mx-auto d-block img-fluid" src="../../../assets/images/My-Picture-1.jpg" style="object-fit: cover;">
         </div>
         <div class="col-md-6">
           <div class="row">
@@ -43,15 +43,15 @@
           </div>
           <div class="row">
             <div class="col-md-12">
-              <h6>Full Stack Developer</h6>
+              <!-- <h6>Full Stack Developer</h6> -->
             </div>
           </div>
           <div class="row">
             <div class="col-md-12">
               <h6 class="pt-2 pb-2">Hi, My name is Chanchit Lerdwongsuwan. You can call me Oat. I am 28 years old. I am
                 a Full-Stack
-                developer based in Bangkok, Thailand. I have experience of building Web Applications with Angular /
-                Dotnet and some cool other libraries and frameworks. I am very passionate about improving my coding
+                developer based in Bangkok, Thailand. I have experience of building Web Applications with Dotnet / Angular 
+                and some cool other libraries and frameworks. I am very passionate about improving my coding
                 skills and developing applications and websites. And I hope we can work together on a project. Thank
                 you.</h6>
             </div>
@@ -173,7 +173,7 @@
           <div class="card " style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
             <div class="row">
               <div class="col-md-4">
-                <img src="../../../assets/images/building-12.webp" class="img-fluid img-education">
+                <img src="../../../assets/images/building-12.webp" class="img-fluid img-education" style="object-fit: cover;">
               </div>
               <div class="col-md-8">
                 <div class="container pt-2">
@@ -202,7 +202,7 @@
       </div>
     </div>
   </section> -->
-  <section id="experience">
+  <section id="experience" style="margin-bottom: 100px;">
     <div class="container">
       <div class="row pt-3 section-experience">
         <div class="col-md-12">
@@ -227,10 +227,14 @@
                   IT One
                 </div>
                 <div class="timeline__event__description">
-                  <p>Developed sites and web-based solutions, both front end and back end, using .NET Core, Angular, and OutSystems. 
-                    Participated in the full software development lifecycle, including requirements gathering, design, coding, and deployment. 
-                    Attended meetings and discussion sessions with the software team to perform analysis and design the project structure according to user requirements. 
-                    Resolved software defects and issues in a timely manner. Documented software functionality and provided user support and training as needed.</p>
+                  <p>Develop sites and web-based solutions, both front end and back end [.NET Core 6.0, angular TS],
+                    Attended meetings or discussion sessions of software team to Performed analysis, design,
+                    Collaborated with cross-functional teams to design and develop software solutions according to client requirements,
+                    Participated in the full software development lifecycle, including requirements gathering, design, coding, and deployment,
+                    Conducted code reviews and provided constructive feedback to team members,
+                    Resolved software defects and issues in a timely manner,
+                    Documented software functionality and provided user support and training as needed
+                  </p>
                 </div>
               </div>
             </div>
@@ -259,7 +263,7 @@
               </div>
               <div class="timeline__event__date" style="color: white;">
                 Jul 2019 - Jul 2021<br>
-                2 yrs 1 mo
+                2 yrs 1 mos
               </div>
               <div class="timeline__event__content">
                 <div class="timeline__event__title">
@@ -366,16 +370,18 @@
         </div>
         <div class="col-md-4 mb-3">
           <h3>Find me on:</h3>
-          <i class="fa-solid fa-phone text-warning"></i><label class="ps-3">063-313-7551</label><br>
-          <i class="fa-solid fa-envelope text-warning"></i><label class="ps-3">chanchit.ler01@gmail.com</label><br>
+          <i class="fa-solid fa-phone text-warning"></i><label class="ps-3" style="user-select: all;">063-313-7551</label><br>
+          <i class="fa-solid fa-envelope text-warning"></i><label class="ps-3" style="user-select: all;">chanchit.ler01@gmail.com</label><br>
 
           <div class="mt-4">
             <button type="button" class="btn btn-light btn-circle me-3 pointer" (click)="linkToSocial('linkedin')"><i
                 class="fa-brands fa-linkedin text-primary fa-xl"></i></button>
             <button type="button" class="btn btn-light btn-circle me-3 pointer" (click)="linkToSocial('github')"><i
                 class="fa-brands fa-github fa-xl"></i></button>
-            <button type="button" class="btn btn-light btn-circle me-3 pointer" (click)="linkToSocial('facebook')"><i
-                class="fa-brands fa-facebook text-primary fa-xl"></i></button>
+            <button type="button" class="btn btn-light btn-circle me-3 pointer" (click)="linkToSocial('instagram')"><i
+                class="fa-brands fa-instagram fa-xl" style="color:red"></i></button>
+            <!-- <button type="button" class="btn btn-light btn-circle me-3 pointer" (click)="linkToSocial('facebook')"><i
+                class="fa-brands fa-facebook text-primary fa-xl"></i></button> -->
             <button type="button" class="btn btn-light btn-circle me-3 pointer" (click)="linkToSocial('line')"><i
                 class="fa-brands fa-line text-success fa-xl"></i></button>
           </div>
