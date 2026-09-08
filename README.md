@@ -31,4 +31,3 @@ ng build --output-path docs --base-href /my-portfol
 
 ## Url Deployed
 https://chanchit1516.github.io/my-portfolio/
-https://frolicking-queijadas-560de5.netlify.app/
