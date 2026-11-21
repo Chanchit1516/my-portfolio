@@ -1,90 +1,81 @@
-import { Component, OnInit } from '@angular/core';
-import { HostListener } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
+
+export interface NavItem {
+  id: string;
+  label: string;
+}
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
-  // @HostListener('window:scroll', ['$event']) // for window scroll events
-  // onScroll(event: any) {
+export class NavbarComponent implements OnInit, OnDestroy {
+  isScrolled = false;
+  isCollapse = false;
+  activeSection = 'header';
 
-  //   this.startPosition = event.srcElement.scrollTop;
-  //   let scroll = event.srcElement.scrollTop;
-
-  //   if (scroll > this.currentPosition) {
-  //     console.log('scrollDown');
-  //   } else {
-  //     console.log('scrollUp');
-  //   }
-
-  //   this.currentPosition = scroll;
-
-
-  //   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-  //     const output = document.getElementById("navbar");
-  //     if (output) output.style.top = "100vh";
-  //   } else {
-  //     const output = document.getElementById("navbar");
-  //     if (output) output.style.top = "0";
-  //   }
-  // }
-
-  constructor() { }
-
-  currentPosition: any;
-  startPosition: number = 0;
-  isCollapse: boolean = false;
-  private scrollChangeCallback!: () => void;
-
+  readonly navItems: ReadonlyArray<NavItem> = [
+    { id: 'header', label: 'Home' },
+    { id: 'about', label: 'About' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'education', label: 'Education' },
+    { id: 'contact', label: 'Contact' }
+  ];
 
   ngOnInit(): void {
+    this.updateScrollState();
   }
 
-  ngAfterViewInit() {
-    this.scrollChangeCallback = () => this.onContentScrolled(event);
-    window.addEventListener('scroll', this.scrollChangeCallback, true);
+  ngOnDestroy(): void {
+    this.isCollapse = false;
   }
 
+  @HostListener('window:scroll')
+  onWindowScroll(): void {
+    this.updateScrollState();
+  }
 
-  onContentScrolled(event: any) {
-    this.startPosition = event.srcElement.scrollTop;
-    let scroll = event.currentTarget.pageYOffset;
-    const nav = document.querySelector(".navbar");
-    if (document.body.scrollTop > 120 || document.documentElement.scrollTop > 120) {
-      nav?.classList.add("navbar-scrolled");
-    } else {
-      nav?.classList.remove("navbar-scrolled");
+  @HostListener('document:keydown.escape')
+  onEscapeKey(): void {
+    if (this.isCollapse) {
+      this.hideCollapseToggler();
+    }
+  }
+
+  onCollapseMobile(): void {
+    this.isCollapse = !this.isCollapse;
+  }
+
+  hideCollapseToggler(): void {
+    this.isCollapse = false;
+  }
+
+  private updateScrollState(): void {
+    const scrollY = window.scrollY || window.pageYOffset || 0;
+    this.isScrolled = scrollY > 30;
+    this.activeSection = this.computeActiveSection(scrollY);
+  }
+
+  private computeActiveSection(scrollY: number): string {
+    const windowHeight = window.innerHeight || 0;
+    const documentHeight = document.documentElement?.scrollHeight || 0;
+
+    if (documentHeight > 0 && scrollY + windowHeight >= documentHeight - 4) {
+      return 'contact';
     }
 
-    // if (scroll > this.currentPosition) {
-    //   console.log('scrollDown');
-    //   // nav?.classList.add("navbar--hidden");
-    //   // nav?.classList.add("navbar--show");
-    // } else {
-    //   console.log('scrollUp');
-    //   // nav?.classList.remove("navbar--hidden");
-    //   // nav?.classList.remove("navbar--show");
-    // }
-    this.currentPosition = scroll;
+    const probeOffset = scrollY + 140;
+    let current = this.navItems[0].id;
 
+    for (const item of this.navItems) {
+      const el = document.getElementById(item.id);
+      if (el && probeOffset >= el.offsetTop) {
+        current = item.id;
+      }
+    }
+
+    return current;
   }
-
-
-  onCollapseMobile() {
-    const nav = document.querySelector(".navbar-collapse");
-    nav?.classList.add("navbar-collapse-mobile");
-    setTimeout(() => {
-      this.isCollapse = true
-    }, 300)
-  }
-
-  hideCollapseToggler() {
-    this.isCollapse = false
-    const nav = document.querySelector(".navbar-collapse");
-    nav?.classList.remove("navbar-collapse-mobile");
-    nav?.classList.remove("show");
-  }
-
 }

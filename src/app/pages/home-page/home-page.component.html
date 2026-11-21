@@ -1,373 +1,366 @@
-<div>
-  <section id="header" class="bg-home color-overlay d-flex">
-    <div class="container page-header">
-      <div class="row align-items-center justify-content-center">
-        <div class="col-md-6">
-          <h1>Hi,</h1>
-          <h1>I'm Chanchit Lerdwongsuwan</h1>
-
-          <div class="row"> 
-            <div class="whitespace">
-                <h5 style="color:#333333; display: inline;">I Am Into </h5>
-            </div>
+<main class="portfolio-main">
+  <!-- Hero Section -->
+  <section id="header" class="hero-section" aria-labelledby="hero-heading">
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-7">
+          <div class="dev-status-pill">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>Full-Stack Software Engineer • Bangkok, TH</span>
           </div>
 
-          <button type="button" class="btn btn-grad mt-3">
-            <a class="nav-link" href="#about">About Me</a>
+          <p class="hero-greeting font-mono mb-2">// Hello, I'm</p>
+          <h1 id="hero-heading" class="hero-title">Chanchit Lerdwongsuwan</h1>
+
+          <div class="hero-role-wrapper mt-3">
+            <span class="role-prefix">I specialize as a </span><span class="typewriter-slot"><span class="whitespace" #typewriterTarget aria-live="polite"></span><span class="typing-cursor" aria-hidden="true">|</span></span>
+          </div>
+
+          <p class="hero-summary mt-3">
+            Building reliable, scalable enterprise web applications with <strong>.NET Core</strong>,
+            <strong>Angular</strong>, and modern cloud/database architectures. Focused on clean code,
+            thoughtful UX, and on-time delivery.
+          </p>
+
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <a href="#experience" class="btn-dev-primary">
+              View Experience <i class="fa-solid fa-arrow-right ms-2" aria-hidden="true"></i>
+            </a>
+            <button type="button" class="btn-dev-secondary" (click)="downloadMyResume()">
+              <i class="fa-solid fa-file-arrow-down me-2" aria-hidden="true"></i>Download Resume
+            </button>
+          </div>
+
+          <div class="hero-socials mt-4 pt-2 d-flex flex-wrap align-items-center gap-3">
+            <span class="social-label font-mono">connect:</span>
+            <button
+              type="button"
+              class="social-icon-btn"
+              aria-label="Visit GitHub profile"
+              (click)="linkToSocial('github')">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+            </button>
+            <button
+              type="button"
+              class="social-icon-btn"
+              aria-label="Visit LinkedIn profile"
+              (click)="linkToSocial('linkedin')">
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+            </button>
+            <button
+              type="button"
+              class="social-icon-btn"
+              aria-label="Connect on Line"
+              (click)="linkToSocial('line')">
+              <i class="fa-brands fa-line" aria-hidden="true"></i>
+            </button>
+            <a
+              href="mailto:chanchit.ler01@gmail.com"
+              class="social-icon-btn"
+              aria-label="Send email to chanchit.ler01@gmail.com">
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="dev-window-card">
+            <div class="dev-window-header">
+              <div class="window-dots" aria-hidden="true">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <span class="window-title font-mono">~/portfolio/chanchit.dev.ts</span>
+            </div>
+
+            <div class="dev-window-body">
+              <img
+                class="img-header img-fluid"
+                src="assets/images/My-FIrst-Logo.svg"
+                alt="Chanchit developer workspace illustration"
+                width="440"
+                height="440">
+            </div>
+
+            <div class="dev-window-footer font-mono">
+              <span class="code-keyword">const</span>
+              <span class="code-var"> developer</span> =
+              {{ '{' }}
+              <span class="code-prop">role</span>: <span class="code-str">'Full-Stack'</span>,
+              <span class="code-prop">stack</span>: [<span class="code-str">'.NET'</span>,
+              <span class="code-str">'Angular'</span>,
+              <span class="code-str">'SQL'</span>]
+              {{ '}' }};
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section-block section-light" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag font-mono">01. // ABOUT ME</span>
+        <h2 id="about-heading" class="section-title">Who I Am</h2>
+      </div>
+
+      <div class="row align-items-center gy-4 mt-2">
+        <div class="col-lg-5 text-center">
+          <div class="about-avatar-wrapper mx-auto">
+            <img
+              class="img-about img-fluid"
+              src="assets/images/My-Picture-1.jpg"
+              alt="Portrait of Chanchit Lerdwongsuwan"
+              width="360"
+              height="360"
+              loading="lazy">
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="about-card">
+            <h3 class="about-subtitle">Full-Stack Developer based in Bangkok, Thailand</h3>
+            <p class="about-text">
+              Hi, my name is <strong>Chanchit Lerdwongsuwan</strong> (you can call me <strong>Oat</strong>).
+              I am {{ getAge() }} years old and a Full-Stack Developer with hands-on experience building
+              web applications using <strong>.NET</strong>, <strong>Angular</strong>, and modern
+              frontend/backend ecosystems.
+            </p>
+            <p class="about-text">
+              I am passionate about continuously improving my software engineering craft, designing
+              maintainable architectures, and collaborating closely with teams and stakeholders to turn
+              complex requirements into dependable software. I look forward to working together on
+              impactful projects.
+            </p>
+
+            <div class="row g-3 mt-2 mb-4">
+              <div class="col-sm-6" *ngFor="let fact of quickFacts">
+                <div class="quick-fact-card">
+                  <span class="quick-fact-label font-mono">{{ fact.label }}</span>
+                  <span class="quick-fact-value">{{ fact.value }}</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex flex-wrap gap-3 align-items-center">
+              <button type="button" class="btn-dev-primary btn-dev-primary-light" (click)="downloadMyResume()">
+                <i class="fa-solid fa-download me-2" aria-hidden="true"></i>My Resume (PDF)
+              </button>
+              <a href="#contact" class="btn-dev-ghost">Contact Me</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section-block section-white" aria-labelledby="skills-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag font-mono">02. // TECH STACK</span>
+        <h2 id="skills-heading" class="section-title">Skills &amp; Technologies</h2>
+        <p class="section-lead">
+          Technologies, frameworks, and tools I work with to build full-stack applications.
+        </p>
+      </div>
+
+      <div class="row g-4 mt-2">
+        <div class="col-md-6" *ngFor="let category of skillCategories">
+          <div class="skill-category-card h-100">
+            <div class="skill-category-header">
+              <div class="skill-category-icon" aria-hidden="true">
+                <i [class]="category.iconClass"></i>
+              </div>
+              <div>
+                <h3 class="skill-category-title">{{ category.title }}</h3>
+                <p class="skill-category-desc mb-0">{{ category.subtitle }}</p>
+              </div>
+            </div>
+
+            <div class="skill-pills-grid mt-3">
+              <div class="skill-pill" *ngFor="let skill of category.items">
+                <img
+                  [src]="skill.icon"
+                  [alt]="skill.name + ' logo'"
+                  width="28"
+                  height="28"
+                  loading="lazy">
+                <span class="skill-name">{{ skill.name }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="section-block section-light" aria-labelledby="experience-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag font-mono">03. // CAREER PATH</span>
+        <h2 id="experience-heading" class="section-title">Work Experience</h2>
+        <p class="section-lead">
+          Professional software engineering experience across enterprise and product teams.
+        </p>
+      </div>
+
+      <div class="dev-timeline mt-4">
+        <article class="dev-timeline-item" *ngFor="let exp of experiences">
+          <div class="dev-timeline-marker" aria-hidden="true">
+            <i class="fa-solid fa-briefcase"></i>
+          </div>
+
+          <div class="dev-timeline-card">
+            <div class="dev-timeline-header">
+              <div>
+                <h3 class="exp-role">{{ exp.role }}</h3>
+                <div class="exp-company">
+                  <i class="fa-regular fa-building me-1" aria-hidden="true"></i>{{ exp.company }}
+                </div>
+              </div>
+
+              <span class="exp-period font-mono">
+                {{ exp.period }}
+                <span class="exp-duration" *ngIf="exp.duration"> • {{ exp.duration }}</span>
+              </span>
+            </div>
+
+            <p class="exp-description mt-3">{{ exp.overview }}</p>
+
+            <div class="exp-tags mt-3">
+              <span class="exp-tag font-mono" *ngFor="let tag of exp.tags">{{ tag }}</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="section-block section-white" aria-labelledby="education-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag font-mono">04. // ACADEMIC BACKGROUND</span>
+        <h2 id="education-heading" class="section-title">Education</h2>
+      </div>
+
+      <article class="education-card mt-4">
+        <div class="row g-0 align-items-stretch">
+          <div class="col-md-5 col-lg-4">
+            <img
+              src="assets/images/building-12.webp"
+              alt="Siam University faculty building"
+              class="img-education"
+              width="400"
+              height="260"
+              loading="lazy">
+          </div>
+
+          <div class="col-md-7 col-lg-8 d-flex align-items-center">
+            <div class="education-content p-4 p-lg-5">
+              <span class="edu-status-badge font-mono">
+                <i class="fa-solid fa-graduation-cap me-2" aria-hidden="true"></i>2014 – 2018 • Completed
+              </span>
+              <h3 class="edu-school mt-3">Siam University</h3>
+              <p class="edu-degree mb-1"><strong>Degree:</strong> Bachelor of Science (B.Sc.)</p>
+              <p class="edu-major mb-0"><strong>Faculty of Science:</strong> Computer Science</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<!-- Contact & Footer -->
+<footer id="contact" class="contact-footer" aria-labelledby="contact-heading">
+  <div class="container">
+    <div class="contact-intro">
+      <span class="section-tag section-tag-dark font-mono">05. // WHAT'S NEXT?</span>
+      <h2 id="contact-heading" class="section-title text-white mt-2">Get In Touch</h2>
+      <p class="contact-lead">
+        Thank you for visiting my personal portfolio. Feel free to reach out for software
+        engineering opportunities or project collaboration.
+      </p>
+    </div>
+
+    <div class="row gy-4 mt-3 pb-4 border-bottom border-secondary border-opacity-25">
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-brand font-heading">
+          <span class="brand-bracket">&lt;</span>Chanchit<span class="brand-dot">.dev</span><span class="brand-bracket"> /&gt;</span>
+        </div>
+        <p class="footer-note mt-2 mb-2">
+          Full-Stack Software Engineer building dependable enterprise web applications.
+        </p>
+        <p class="footer-location font-mono mb-0">
+          <i class="fa-solid fa-location-dot me-2" aria-hidden="true"></i>Bangkok, Thailand
+        </p>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <h3 class="footer-heading">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#header">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-4 col-md-12">
+        <h3 class="footer-heading">Direct Contact</h3>
+        <div class="contact-list">
+          <a href="tel:0633137551" class="contact-item">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+            <span>063-313-7551</span>
+          </a>
+          <a href="mailto:chanchit.ler01@gmail.com" class="contact-item">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            <span>chanchit.ler01@gmail.com</span>
+          </a>
+        </div>
+
+        <div class="d-flex flex-wrap gap-2 mt-3">
+          <button
+            type="button"
+            class="footer-social-btn"
+            aria-label="Visit LinkedIn profile"
+            (click)="linkToSocial('linkedin')">
+            <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+          </button>
+          <button
+            type="button"
+            class="footer-social-btn"
+            aria-label="Visit GitHub profile"
+            (click)="linkToSocial('github')">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+          </button>
+          <button
+            type="button"
+            class="footer-social-btn"
+            aria-label="Visit Instagram profile"
+            (click)="linkToSocial('instagram')">
+            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+          </button>
+          <button
+            type="button"
+            class="footer-social-btn"
+            aria-label="Connect on Line"
+            (click)="linkToSocial('line')">
+            <i class="fa-brands fa-line" aria-hidden="true"></i>
           </button>
         </div>
-        <div class="col-md-6">
-          <img class="img-header mx-auto d-block img-fluid" src="assets/images/My-First-Logo.svg">
-        </div>
       </div>
     </div>
-  </section>
-  <section id="about">
-    <div class="container">
-      <div class="row pt-3 section-about">
-        <div class="col-md-12">
-          <div class="header-center">
-            <h3>About Me</h3>
-          </div>
-        </div>
-      </div>
-      <div class="row pt-5">
-        <div class="col-md-6">
-          <img class="rounded-circle img-about mx-auto d-block img-fluid" src="assets/images/My-Picture-1.jpg" style="object-fit: cover;">
-        </div>
-        <div class="col-md-6">
-          <div class="row">
-            <div class="col-md-12">
-              <h3>Who I am?</h3>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <!-- <h6>Full Stack Developer</h6> -->
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <h6 class="pt-2 pb-2">Hi, My name is Chanchit Lerdwongsuwan. You can call me Oat. I am {{getAge()}} years old. I am
-                a Full-Stack
-                developer based in Bangkok, Thailand. I have experience of building Web Applications with Dotnet / Angular 
-                and some cool other libraries and frameworks. I am very passionate about improving my coding
-                skills and developing applications and websites. And I hope we can work together on a project. Thank
-                you.</h6>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12 mb-3">
-              <button type="button" class="btn btn-grad mt-3" (click)="downloadMyResume()">
-                <a class="nav-link">My Resume</a>
-              </button>
-            </div>
-          </div>
-          <!-- <div class="row">
-            <div class="col-md-12">
-              <h6><strong>Age:</strong> 27</h6>
-            </div>
-          </div> -->
 
-        </div>
-
-      </div>
+    <div class="footer-bottom pt-3">
+      <p class="mb-0 font-mono">© Chanchit Lerdwongsuwan — Crafted with Angular &amp; Clean Code.</p>
     </div>
-  </section>
-  <section id="skills">
-    <div class="container">
-      <div class="row pt-3 section-skills">
-        <div class="col-md-12">
-          <div class="header-center">
-            <h3>Skills</h3>
-          </div>
-        </div>
-      </div>
-
-      <div class="row pt-5">
-        <div class="col-md-12 text-center">
-          <h5>Technology I've been working with recently.</h5>
-        </div>
-      </div>
-
-      <div class="row pt-5">
-        <div class="col-md-2 col-sm-4 col-6 text-center">
-          <img src="assets/images/net-core-seeklogo.com.svg" style="width: 80px; height: 80px;">
-        </div>
-        <div class="col-md-2 col-sm-4 col-6 text-center">
-          <img src="assets/images/icons8-angularjs.svg" style="width: 80px; height: 80px;">
-        </div>
-        <div class="col-md-2 col-sm-4 col-6 text-center">
-          <img src="assets/images/icons8-html-5.svg" style="width: 80px; height: 80px;">
-        </div>
-        <div class="col-md-2 col-sm-4 col-6 text-center">
-          <img src="assets/images/icons8-css3.svg" style="width: 80px; height: 80px;">
-        </div>
-        <div class="col-md-2 col-sm-4 col-6 text-center">
-          <img src="assets/images/icons8-javascript.svg" style="width: 80px; height: 80px;">
-        </div>
-        <div class="col-md-2 col-sm-4 col-6 text-center">
-          <img src="assets/images/icons8-typescript.svg" style="width: 80px; height: 80px;">
-        </div>
-      </div>
-      <div class="row pt-5">
-        <div class="col-md-2 col-sm-4 col-6 text-center">
-          <img src="assets/images/icons8-nodejs.svg" style="width: 80px; height: 80px;">
-        </div>
-        <div class="col-md-2 col-sm-4 col-6 text-center">
-          <img src="assets/images/icons8-redux.svg" style="width: 80px; height: 80px;">
-        </div>
-        <div class="col-md-2 col-sm-4 col-6 text-center">
-          <img src="assets/images/icons8-material-ui.svg" style="width: 80px; height: 80px;">
-        </div>
-        <div class="col-md-2 col-sm-4 col-6 text-center">
-          <img src="assets/images/icons8-bootstrap.svg" style="width: 80px; height: 80px;">
-        </div>
-        <div class="col-md-2 col-sm-4 col-6 text-center">
-          <img src="assets/images/icons8-microsoft-sql-server.svg" style="width: 80px; height: 80px;">
-        </div>
-        <div class="col-md-2 col-sm-4 col-6 text-center">
-          <img src="assets/images/icons8-postgresql.svg" style="width: 80px; height: 80px;">
-        </div>
-      </div>
-      <div class="row pt-5">
-        <div class="col-md-2 col-sm-4 col-6 text-center">
-          <img src="assets/images/icons8-github.svg" style="width: 80px; height: 80px;">
-        </div>
-        <div class="col-md-2 col-sm-4 col-6 text-center">
-          <img src="assets/images/icons8-gitlab.svg" style="width: 80px; height: 80px;">
-        </div>
-        <div class="col-md-2 col-sm-4 col-6 text-center">
-          <img src="assets/images/icons8-azure.svg" style="width: 80px; height: 80px;">
-        </div>
-        <div class="col-md-2 col-sm-4 col-6 text-center">
-          <img src="assets/images/icons8-google-cloud.svg" style="width: 80px; height: 80px;">
-        </div>
-        <div class="col-md-2 col-sm-4 col-6 text-center">
-          <img src="assets/images/icons8-visual-studio-code-2019.svg" style="width: 80px; height: 80px;">
-        </div>
-        <div class="col-md-2 col-sm-4 col-6 text-center">
-          <img src="assets/images/icons8-visual-studio.svg" style="width: 80px; height: 80px;">
-        </div>
-      </div>
-      <div class="row pt-5">
-        <div class="col-md-2 col-sm-4 col-6 text-center">
-          <img src="assets/images/outsystems-logo.png" style="width: 80px; height: 80px;">
-        </div>
-        <div class="col-md-2 col-sm-4 col-6 text-center">
-          <img src="assets/images/elasticsearch-seeklogo.svg" style="width: 80px; height: 80px;">
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="education" class="mb-4">
-    <div class="container">
-      <div class="row pt-3 section-education">
-        <div class="col-md-12">
-          <div class="header-center">
-            <h3>Education</h3>
-          </div>
-        </div>
-      </div>
-      <div class="row pt-5">
-        <div class="col-md-12">
-          <div class="card " style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
-            <div class="row">
-              <div class="col-md-4">
-                <img src="assets/images/building-12.webp" class="img-fluid img-education" style="object-fit: cover;">
-              </div>
-              <div class="col-md-8">
-                <div class="container pt-2">
-                  <h3 class="card-title">Siam University</h3>
-                  <h5><strong>Faculty of Science:</strong> Computer Sciences</h5>
-                  <h5><strong>Degree:</strong> Bachelor's degree</h5>
-                  <!-- <h5><strong>Grade:</strong> 2.8</h5> -->
-                  <h5 class="text-success"><strong>2014-2018 | Completed</strong></h5>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-  <!-- <section id="work">
-    <div class="container">
-      <div class="row pt-3 section-work">
-        <div class="col-md-12">
-          <div class="header-center">
-            <h3>Work</h3>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
-  <section id="experience" style="margin-bottom: 100px;">
-    <div class="container">
-      <div class="row pt-3 section-experience">
-        <div class="col-md-12">
-          <div class="header-center">
-            <h3>Experience</h3>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="timeline">
-            <div class="timeline__event  animated fadeInUp delay-3s timeline__event--type1">
-              <div class="timeline__event__icon ">
-                <i class="fa-solid fa-briefcase"></i>
-              </div>
-              <div class="timeline__event__date" style="color: white;">
-                Oct 2021 - Present<br>
-                1 yr
-              </div>
-              <div class="timeline__event__content ">
-                <div class="timeline__event__title">
-                  IT One
-                </div>
-                <div class="timeline__event__description">
-                  <div class="mt-1"><span style="font-weight: bold;">Role: </span><span>Custom Software Engineering Specialist</span></div>
-                  <div class="mt-1"><span style="font-weight: bold;">Overview: </span><span>As a Custom Software Engineering Specialist, I focus on delivering projects on time by accurately estimating timelines and managing project scope. I am involved in the entire development lifecycle, from designing and developing software solutions to maintaining and optimizing them. I take responsibility for managing task assignments, offering feedback to team members, and ensuring effective collaboration. Additionally, I actively participate in key meetings, such as requirement gathering, project kick-offs, and daily stand-ups, to ensure smooth project progression and alignment with business goals.</span><br></div>
-                </div>
-              </div>
-            </div>
-            <div class="timeline__event animated fadeInUp delay-2s timeline__event--type2">
-              <div class="timeline__event__icon">
-                <i class="fa-solid fa-briefcase"></i>
-              </div>
-              <div class="timeline__event__date" style="color: white;">
-                Jul 2021 - Sep 2021<br>
-                3 mos
-              </div>
-              <div class="timeline__event__content">
-                <div class="timeline__event__title">
-                  Buzzebees
-                </div>
-                <div class="timeline__event__description">
-                  <div class="mt-1"><span style="font-weight: bold;">Role: </span><span>Back End Developer</span></div>
-                  <div class="mt-1"><span style="font-weight: bold;">Overview: </span><span>As a Back End Developer, I focus on developing the backend components of projects. I analyze requirements, design databases, and am responsible for developing tasks as assigned. I actively participate in development and attend daily meetings as needed. ensuring the quality and performance of the code.</span></div>
-                </div>
-              </div>
-            </div>
-            <div class="timeline__event animated fadeInUp delay-1s timeline__event--type3">
-              <div class="timeline__event__icon">
-                <i class="fa-solid fa-briefcase"></i>
-              </div>
-              <div class="timeline__event__date" style="color: white;">
-                Jul 2019 - Jul 2021<br>
-                2 yrs 1 mos
-              </div>
-              <div class="timeline__event__content">
-                <div class="timeline__event__title">
-                  Celestica
-                </div>
-                <div class="timeline__event__description">
-                  <div class="mt-1"><span style="font-weight: bold;">Role: </span><span>Full Stack Developer</span></div>
-                  <div class="mt-1"><span style="font-weight: bold;">Overview:</span><span>As a Full Stack Developer, I focus on develope, design tasks as assigned Attended meetings or discussion sessions of software team to Performed analysis, design structure project and development of the application according to the user requirements and Attends monthly status meetings with the development, functional and project management teams to discuss status.</span></div>
-                </div>
-
-              </div>
-            </div>
-            <div class="timeline__event animated fadeInUp timeline__event--type4">
-              <div class="timeline__event__icon">
-                <i class="fa-solid fa-briefcase"></i>
-              </div>
-              <div class="timeline__event__date" style="color: white;">
-                Jun 2018 - Jul 2019 <br>
-                1 yr 2 mos
-              </div>
-              <div class="timeline__event__content">
-                <div class="timeline__event__title">
-                  2Fellows
-                </div>
-                <div class="timeline__event__description">
-                  <div class="mt-1"><span style="font-weight: bold;">Role: </span><span>Full Stack Developer</span></div>
-                  <div class="mt-1"><span style="font-weight: bold;">Overview:</span><span>As a Full Stack Developer, I focus on developing assigned tasks for both front-end and back-end. I resolve any threats and bugs, communicate with clients to provide knowledge, expertise, and support, and ensure their requirements are met. I also attend client meetings and software team discussions to understand and implement requested new functionalities.</span></div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="contact">
-    <div class="container" style="color:white">
-      <div class="row pt-3 section-contact">
-        <div class="col-md-12 text-center">
-          <h3>GET IN TOUCH</h3>
-        </div>
-      </div>
-      <hr class=" border-top border-secondary">
-
-      <div class="row ">
-        <div class="col-md-4 mb-3">
-          <h3>Chanchit Portfolio</h3>
-          <label>Thank you for visiting my personal portfolio website. Connect with me over socials.</label>
-        </div>
-        <div class="col-md-4 mb-3">
-          <h3>Quick Links</h3>
-          <div class="row">
-            <div class="col-md-6 quick-link-hover">
-              <a class="quick-link-hover pointer" href="#header">
-                <i class="fa-solid fa-circle-arrow-up  "></i><label class="ps-3 pointer">Home</label><br>
-              </a>
-            </div>
-            <div class="col-md-6 quick-link-hover">
-              <a class="quick-link-hover pointer" href="#education">
-                <i class="fa-solid fa-circle-arrow-up pointer"></i><label class="ps-3 pointer">Education</label>
-              </a>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6 ">
-              <a class="quick-link-hover pointer" href="#about">
-                <i class="fa-solid fa-circle-arrow-up pointer"></i><label class="ps-3 pointer">About</label><br>
-              </a>
-
-            </div>
-            <div class="col-md-6 quick-link-hover">
-
-              <a class="quick-link-hover pointer" href="#experience">
-                <i class="fa-solid fa-circle-arrow-up pointer"></i><label class="ps-3 pointer">Experience</label>
-              </a>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6 quick-link-hover">
-              <a class="quick-link-hover pointer" href="#skills">
-                <i class="fa-solid fa-circle-arrow-up pointer"></i><label class="ps-3 pointer">Skills</label>
-              </a>
-
-            </div>
-            <div class="col-md-6">
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-3">
-          <h3>Find me on:</h3>
-          <i class="fa-solid fa-phone text-warning"></i><label class="ps-3" style="user-select: all;">063-313-7551</label><br>
-          <i class="fa-solid fa-envelope text-warning"></i><label class="ps-3" style="user-select: all;">chanchit.ler01@gmail.com</label><br>
-
-          <div class="mt-4">
-            <button type="button" class="btn btn-light btn-circle me-3 pointer" (click)="linkToSocial('linkedin')"><i
-                class="fa-brands fa-linkedin text-primary fa-xl"></i></button>
-            <button type="button" class="btn btn-light btn-circle me-3 pointer" (click)="linkToSocial('github')"><i
-                class="fa-brands fa-github fa-xl"></i></button>
-            <button type="button" class="btn btn-light btn-circle me-3 pointer" (click)="linkToSocial('instagram')"><i
-                class="fa-brands fa-instagram fa-xl" style="color:red"></i></button>
-            <!-- <button type="button" class="btn btn-light btn-circle me-3 pointer" (click)="linkToSocial('facebook')"><i
-                class="fa-brands fa-facebook text-primary fa-xl"></i></button> -->
-            <button type="button" class="btn btn-light btn-circle me-3 pointer" (click)="linkToSocial('line')"><i
-                class="fa-brands fa-line text-success fa-xl"></i></button>
-          </div>
-
-
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
+  </div>
+</footer>

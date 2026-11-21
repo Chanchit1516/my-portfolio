@@ -1,38 +1,35 @@
-<header id="navbar" class="navbar navbar-expand-lg navbar-light nav-bg fixed-top">
-  <div class="container-xxl">
-    <a class="navbar-brand" href="#">Portfolio</a>
-    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" (click)="onCollapseMobile()"
-      data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false"
+<header id="navbar" class="navbar-shell fixed-top" [class.navbar-scrolled]="isScrolled">
+  <nav class="navbar navbar-expand-lg container" aria-label="Primary navigation">
+    <a class="navbar-brand" href="#header" (click)="hideCollapseToggler()">
+      <span class="brand-bracket">&lt;</span>Chanchit<span class="brand-dot">.dev</span><span class="brand-bracket"> /&gt;</span>
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      (click)="onCollapseMobile()"
+      [attr.aria-expanded]="isCollapse"
+      aria-controls="navbarToggler"
       aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <i class="fa-solid" [class.fa-bars]="!isCollapse" [class.fa-xmark]="isCollapse" aria-hidden="true"></i>
     </button>
-    <div class="collapse navbar-collapse" id="navbarToggler">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item ps-3">
-          <a class="nav-link active" aria-current="page" href="#header" (click)="hideCollapseToggler()">Home</a>
+
+    <div class="collapse navbar-collapse" id="navbarToggler" [class.show]="isCollapse">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        <li class="nav-item" *ngFor="let item of navItems">
+          <a
+            class="nav-link"
+            [class.active]="activeSection === item.id"
+            [attr.aria-current]="activeSection === item.id ? 'page' : null"
+            [href]="'#' + item.id"
+            (click)="hideCollapseToggler()">
+            {{ item.label }}
+          </a>
         </li>
-        <li class="nav-item ps-3">
-          <a class="nav-link" href="#about" (click)="hideCollapseToggler()">About</a>
-        </li>
-        <li class="nav-item ps-3">
-          <a class="nav-link" href="#skills" (click)="hideCollapseToggler()">Skills</a>
-        </li>
-        <li class="nav-item ps-3">
-          <a class="nav-link" href="#education" (click)="hideCollapseToggler()">Education</a>
-        </li>
-        <!-- <li class="nav-item ps-3">
-          <a class="nav-link" href="#work" (click)="hideCollapseToggler()">Work</a>
-        </li> -->
-        <li class="nav-item ps-3">
-          <a class="nav-link" href="#experience" (click)="hideCollapseToggler()">Experience</a>
-        </li>
-        <li class="nav-item ps-3">
-          <a class="nav-link" href="#contact" (click)="hideCollapseToggler()">Contact</a>
+        <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+          <a class="btn-nav-cta" href="#contact" (click)="hideCollapseToggler()">Let's Talk</a>
         </li>
       </ul>
-      <i class="fa-solid fa-x fa-2xl mobile-nav-toggle" style="color: white;" *ngIf="isCollapse" (click)="hideCollapseToggler()"></i>
-      <!-- <span class="bi mobile-nav-toggle bi-x navbar-toggler-icon" style="background-color: red;"></span> -->
-      <!-- <i class="bi mobile-nav-toggle bi-x"></i> -->
     </div>
-  </div>
+  </nav>
 </header>
